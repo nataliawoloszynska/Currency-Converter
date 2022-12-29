@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Przelicznik walut</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style/reset.css" />
+    <link rel="stylesheet" href="./style/style.css" />
+  </head>
+  <body>
+    <div class="converter-container">
+      <header class="logo">
+        <img src="./assets/logo.png" />
+      </header>
+      <section class="converter">
+        <div class="value-input">
+          <div class="input">
+            <input type="number" id="value" class="value" placeholder="Kwota" />
+            <select id="select-currency"></select>
+          </div>
+          <input
+            type="button"
+            id="calculate-btn"
+            class="calculate-btn"
+            value="Przelicz"
+          />
+        </div>
+        <div class="result">
+          <p id="result-pln">0</p>
+          <p>PLN</p>
+        </div>
+      </section>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
