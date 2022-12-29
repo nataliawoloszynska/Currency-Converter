@@ -1,6 +1,6 @@
 // API
 
-const url = "http://api.nbp.pl/api/exchangerates/tables/A?format=json";
+const url = "https://api.nbp.pl/api/exchangerates/tables/A?format=json";
 
 // Global Constants
 
