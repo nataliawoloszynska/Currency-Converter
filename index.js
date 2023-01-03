@@ -5,7 +5,7 @@ const url = "https://api.nbp.pl/api/exchangerates/tables/A?format=json";
 // Global Constants
 
 const select = document.querySelector("#select-currency");
-const inputValue = document.querySelector("#value");
+const inputAmount = document.querySelector("#amount-pln");
 const result = document.querySelector("#result-pln");
 const button = document.querySelector("#calculate-btn");
 
@@ -14,24 +14,24 @@ const button = document.querySelector("#calculate-btn");
 fetch(url)
   .then((response) => response.json())
   .then((data) => {
-    console.log(data[0].rates);
-    data[0].rates.forEach((rate) => {
+    const rates = data[0].rates;
+    rates.forEach((rate) => {
       if (["EUR", "USD", "CHF"].includes(rate.code)) {
         const option = document.createElement("option");
         option.setAttribute("value", rate.code);
-        document.querySelector("#select-currency").appendChild(option);
+        select.appendChild(option);
         option.innerText = rate.code;
       }
     });
     button.addEventListener("click", () => {
       const currentOption = select.value;
-      const currentRate = data[0].rates.find(
-        (item) => currentOption === item.code
-      ).mid;
-      result.textContent = inputValue.value * currentRate;
+      const currentRate = rates.find((item) => currentOption === item.code).mid;
+      let resultValue = inputAmount.value * currentRate;
+      const roundedResultValue = resultValue.toFixed(2);
+      result.textContent = `${roundedResultValue} PLN`;
     });
   })
   .catch((err) => {
     console.error(err);
-    return "Nie mozna wyświetlić kursu walut";
+    result.textContent = `Nie mozna wyświetlić kursu walut`;
   });

@@ -33,7 +33,7 @@ body {
   width: 80%;
 }
 
-.value-input,
+.currency-settings-container,
 .result {
   padding: 10px;
   border-radius: 5%;
@@ -47,18 +47,18 @@ select {
   font-weight: 700;
 }
 
-.value-input {
+.currency-settings-container {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
 
-.input {
+.currency-settings {
   display: flex;
   justify-content: space-around;
 }
 
-.value {
+.amount-pln {
   border: none;
   width: 50%;
   border-bottom: 1px solid black;
@@ -87,7 +87,7 @@ select {
 
 /* Media Queries */
 @media screen and (min-width: 530px) {
-  .value-input {
+  .currency-settings-container {
     flex-direction: row;
   }
   .calculate-btn {

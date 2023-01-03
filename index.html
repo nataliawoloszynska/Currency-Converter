@@ -18,21 +18,22 @@
         <img src="./assets/logo.png" />
       </header>
       <section class="converter">
-        <div class="value-input">
-          <div class="input">
-            <input type="number" id="value" class="value" placeholder="Kwota" />
+        <div class="currency-settings-container">
+          <div class="currency-settings">
+            <input
+              type="number"
+              id="amount-pln"
+              class="amount-pln"
+              min="0"
+              oninput="this.value = Math.abs(this.value)"
+              placeholder="Kwota"
+            />
             <select id="select-currency"></select>
           </div>
-          <input
-            type="button"
-            id="calculate-btn"
-            class="calculate-btn"
-            value="Przelicz"
-          />
+          <button id="calculate-btn" class="calculate-btn">Przelicz</button>
         </div>
         <div class="result">
-          <p id="result-pln">0</p>
-          <p>PLN</p>
+          <p id="result-pln">0 PLN</p>
         </div>
       </section>
     </div>
